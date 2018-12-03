@@ -13,9 +13,13 @@
 		$arrayVentas[$contVenta] = explode("|", $lecturaVentas);
 		$arrayClientes[$contCliente] = explode("|", $lecturaClientes);
 
+		/*echo $arrayClientes[$contCliente][0] ."|";
+		echo $arrayClientes[$contCliente][0];*/
+		
 		while ($arrayVentas[$contVenta][0] != $arrayClientes[$contCliente][0]) {
 			$lecturaClientes = fgets($archivoClientes);
 			$contCliente++;
+			echo "son distintos";
 		}
 	echo <<<xxx
 		<p>Fecha: $fecha</p>
@@ -23,17 +27,8 @@
 xxx;
 
 		$lecturaVentas = fgets($archivoVentas);
-		//$contVenta++;
-		//echo $lecturaClientes;
-		//echo $lecturaVentas;
-
-		//$regC = substr($lecturaClientes,0,3);
-		//$regV = substr($lecturaVentas, 0,3);
-		/*echo $regV;
-		echo "<br>";
-		echo $regC;*/
-
-		
+		$contVenta++;
+		$contCliente++;
 
 		
 	}
