@@ -23,7 +23,7 @@
 xxx;
 
 		$lecturaVentas = fgets($archivoVentas);
-		$contVenta++;
+		//$contVenta++;
 		//echo $lecturaClientes;
 		//echo $lecturaVentas;
 
