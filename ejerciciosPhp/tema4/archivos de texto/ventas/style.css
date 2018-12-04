@@ -1,0 +1,33 @@
+body{
+	
+}
+	.ficha{
+	    width: 30%;
+	    margin: 0 auto;
+        border: 5px solid #000;
+	    border-radius: 20px;
+	    padding: 25px;
+	}
+		h2{
+		    font-size: 35px;
+		    font-weight: 900;
+		    text-decoration: underline;
+		    text-align: center;
+		    padding: 15px;    
+		    color: #242523;
+    		text-shadow: 1px 1px 1px #deffc0;
+		}
+		form{
+
+		} 
+			label{
+				display: inline-block;
+    			width: 180px;
+    			font-size: 20px;
+    			font-weight: 900;
+			}
+			input[type=submit]{
+			    width: 210px;
+			    height: 28px;
+			    border-radius: 10px;
+			}
