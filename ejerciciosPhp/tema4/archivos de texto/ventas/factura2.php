@@ -1,19 +1,42 @@
 <?php  
 
 	//abro los archivos de ventas y clientes
-	$archivoVentas = fopen("ventas.dat", "r") or die("ERROR!!!");
 	$archivoClientes = fopen("clientes.dat", "r") or die("ERROR!!!");
 
 	$fecha= date ("j/n/Y");
-	$contVenta = 1;
-	$contCliente = 1;
+	$contVenta = 0;
+	$contCliente = 0;
 	$total = 0;
+	$cCliente = 0;
+	$conPorc = 0;
+
+
+	//leo el primer registro de clientes
+	$lecturaClientes = fgets($archivoClientes);
+
+	//cuento los clientes que hay
+	while (!feof($archivoClientes)) {
+		$lecturaClientes = fgets($archivoClientes);
+		$cCliente++;
+	}
+
+	fclose($archivoClientes);
+	//echo $cCliente;
+	//sacar el 10% de clientes
+
+	$diezPorc = $cCliente/10;
+
+	/*************************************************/
+
+	//abro los dos ficheros ventas y clientes
+	$archivoVentas = fopen("ventas.dat", "r") or die("ERROR!!!");
+	$archivoClientes = fopen("clientes.dat", "r") or die("ERROR!!!");
 
 	//leo el primer registro de ventas
 	$lecturaVentas = fgets($archivoVentas);
 
-	//mientras no sea final de fichero de ventas
-	while (!feof($archivoVentas)) {
+	//mientras que conPorc sea menor al 10% de clientes....
+	while ($conPorc< $diezPorc) {
 
 		//leo el primer registro de clientes
 		$lecturaClientes = fgets($archivoClientes);
@@ -60,6 +83,8 @@ xxx;
 		echo "-----------------------------";
 		$total = 0;
 		$contCliente++;
+		//le sumo uno a conPorc
+		$conPorc++;
 
 		
 	}
