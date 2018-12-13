@@ -14,7 +14,8 @@
 
         $q = mysqli_query($conexion, "CREATE table trenes_antiguos SELECT * FROM trenes WHERE fecha_compra <= '2005-01-01'");
         $borrar = mysqli_query($conexion, "DELETE from trenes where fecha_compra <= '2005-01-01'");
-
+        $addColum = mysqli_query($conexion, "ALTER TABLE trenes add capacidad int");
+        
 
        /* while ($reg=mysqli_fetch_array($q)){
             //Para recuperar  registro a registro los datos obtenidos por el select hay que llamar a la función mysqli_fetch_array()
