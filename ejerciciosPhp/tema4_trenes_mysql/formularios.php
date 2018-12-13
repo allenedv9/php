@@ -14,7 +14,7 @@
 
 echo <<<abc
 <h3>Introduce datos del Tren</h3>
-<form action="inserts.php" method="post">
+<form action="2-inserts.php" method="post">
   <!--  <label>Número de Tren</label>
     <input type="number" name="cod_tren" require><br>-->
     <label>Fecha de Compra</label>
@@ -25,7 +25,7 @@ echo <<<abc
 </form>
 
 <h3>Introduce datos de la Estación</h3>
-<form action="inserts.php" method="post">
+<form action="2-inserts.php" method="post">
     <!--<label>Código de la Estación</label>
     <input type="number" name="cod_estacion" require><br>-->
     <label>Nombre de la Estación</label>
@@ -36,7 +36,7 @@ echo <<<abc
 </form>
 
 <h3>Recorridos</h3>
-<form action="inserts.php" method="post">
+<form action="2-inserts.php" method="post">
     <label>Código del Tren</label>
     <input type="number" name="codigo_tren" id="" require><br>
     <label for="">Código Estación</label>

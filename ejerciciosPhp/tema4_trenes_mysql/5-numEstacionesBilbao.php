@@ -12,22 +12,14 @@
     <?php
        $conexion=mysqli_connect("localhost","root","", "trenes") or die("Error en la conexion"); 
 
-        $q = mysqli_query($conexion,"select cod_tren,fecha_compra  from trenes") or die("Problemas en el select:".mysqli_error());
+        $q = mysqli_query($conexion,"select count(cod_estacion) as cod from estaciones where poblacion='Bilbao'") or die("Problemas en el select:".mysqli_error());
     
-
-        echo <<<abc
-        '<div> Visualizar el código del tren y la fecha de compra - $q</div>'
-
-abc;
 
 while ($reg=mysqli_fetch_array($q)){
 //Para recuperar  registro a registro los datos obtenidos por el select hay que llamar a la función mysqli_fetch_array()
 
-    echo "Numero de tren:".$reg['cod_tren']."<br>";
-    echo "fecha de compra:".$reg['fecha_compra']."<br>";
-
-    echo "<br>";
-    echo "<hr>";
+    echo "Numero de estaciones que tiene Bilbao:".$reg['cod']."<br>";
+  
 }
 mysqli_close($conexion);
 
