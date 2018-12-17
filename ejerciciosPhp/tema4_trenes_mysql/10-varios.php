@@ -33,7 +33,7 @@ html;
         
         $conexion=mysqli_connect("localhost","root","", "trenes") or die("Error en la conexion");
 
-        $addColum = mysqli_query($conexion, "ALTER TABLE trenes add capacidad int");
+        $addColum = mysqli_query($conexion, "ALTER TABLE trenes add capacidad int") or die("Ya está creada la columna");
        
         echo "ALTER TABLE trenes add capacidad int";
         echo "<br>";
@@ -84,13 +84,27 @@ if (isset($_POST['mas3tren'])) {
 
     $estaciones = mysqli_query($conexion, "SELECT e.nombre, e.poblacion FROM trenes t, recorridos r, estaciones e WHERE t.cod_tren = r.cod_tren && e.cod_estacion= r.cod_estacion HAVING COUNT(nombre)>=3 ");
    
-
     echo "SELECT e.nombre, e.poblacion FROM trenes t, recorridos r, estaciones e WHERE t.cod_tren = r.cod_tren && e.cod_estacion= r.cod_estacion HAVING COUNT(nombre)>=3 ";
-    echo "<br>";
-    echo "<br>";
+    echo "<br><br>";
+
+    
+    while($reg = mysqli_fetch_array($estaciones)){
+        echo <<<sql
+        La estación es:  {$reg['nombre']} <br>
+        La población es:  {$reg['poblacion']} <br><br>
+sql;
+
+
+    }
+
+    
+
 
     mysqli_close($conexion); 
 }
+
+
+
     echo <<<html
     <form action="" method="post">
         <label for="">Nombre y poblacion de las estaciones que no pasan trenes</label><br>
@@ -101,24 +115,19 @@ html;
     if (isset($_POST['nulltren'])) {
 
         $conexion=mysqli_connect("localhost","root","", "trenes") or die("Error en la conexion");
-        $q = mysqli_query($conexion, "select e.nombre, e.poblacion from trenes t, recorridos r, estaciones e WHERE e.cod_estacion not in ( SELECT e.cod_estacion from recorridos) ");
+        $q = mysqli_query($conexion, "select e.nombre, e.poblacion from estaciones e WHERE e.cod_estacion not in (SELECT r.cod_estacion from recorridos r, trenes t, estaciones e WHERE r.cod_tren=t.cod_tren AND e.cod_estacion = r.cod_estacion) ");
 
      while ($reg=mysqli_fetch_array($q)){
     
-      //  echo "<b>Nombre de la estacion:</b>".$reg['nombre']."<br>";
-        //echo "<b>Población:</b>".$reg['poblacion']."<br>";
+        echo <<<sql
+        La estación es:  {$reg['nombre']} <br>
+        La población es:  {$reg['poblacion']} <br><br>
+sql;
 
-        $n = $reg['nombre'];
-        $p = $reg['poblacion'];
-
-        echo$n+"no hay nada";
-        echo$p;
-        if(empty($n) && empty($p)){
-            echo " No hay registros para esa select";
-        }
-    }
+       
+    
     
     
 }
-
+    }
 ?>
