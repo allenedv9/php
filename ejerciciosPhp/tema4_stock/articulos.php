@@ -8,7 +8,7 @@
 <body>
 	<div class="ficha">
 		<h2>Nuevo Artículo</h2>
-		<form action="registroArticulos.php" method="post">
+		<form action="controlador_articulos.php" method="post">
 			<label>Código del artículo:</label>
 			<input type="number" name="codigoA" required><br><br>
 			<label>Descripción: </label>
