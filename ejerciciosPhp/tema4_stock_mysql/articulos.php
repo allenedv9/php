@@ -14,13 +14,15 @@
 			<label>Descripción: </label>
 			<input type="text" name="desc" required><br><br>
 			<label>Existencias: </label>
-			<input type="number" name="existencias" required><br>
+			<input type="number" name="existencias" required><br><br>
 			<label>Stock mínimo: </label>
-			<input type="number" name="stock" required><br>
+			<input type="number" name="stock" required><br><br>
 			<label>Código del proveedor: </label>
-			<input type="number" name="codigoP" required><br>
+			<input type="number" name="codigoP" required><br><br>
+			<label>Marca: </label>
+			<input type="text" name="marca" required><br><br>
 			<br><br>
-			<input type="submit" name="registrar" value="Registrar Datos del Cliente">
+			<input type="submit" name="registrar" value="Registrar artículo">
 			<br><br>
 		</form>
 	</div>
