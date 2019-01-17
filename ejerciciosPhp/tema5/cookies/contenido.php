@@ -1,8 +1,9 @@
 <?php
 
-header('Content-Type: text/html; charset=UTF-8');
-if($_REQUEST['nombre']){
-    setcookie("prueba");
+$nom = $_REQUEST['nombre'];
+
+if(isset($_REQUEST['nombre'])){
+    setcookie('prueba',$nom);
 }
 
 ?>
@@ -17,7 +18,7 @@ if($_REQUEST['nombre']){
 </head>
 <body>
 
-<a href=""></a>
+<a href="info.php"">Ver información de la página</a>
     
 </body>
 </html>

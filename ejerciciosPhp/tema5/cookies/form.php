@@ -9,19 +9,19 @@
 <body>
 <?php
 
-    if(isset($_COOKIE['prueba'])){
+    if(isset($_COOKIE['dos'])){
         echo <<<abc
-        <form action="contenido.php" method="post">
+        <form action="cont.php" method="post">
         <p>************************************</p>
         <label for="">Introduce un nombre</label><br>
-        <input type="text" name="nombre" id="" value="{$_COOKIE['prueba']}">
+        <input type="text" name="nombre" id="" value="{$_COOKIE['dos']}">
         <input type="submit" value="Enviar" name="enviar">
         <p>************************************</p>
     </form>
 abc;
-    }
+    }else{
         echo <<<abc
-    <form action="contenido.php" method="post">
+    <form action="cont.php" method="post">
         <p>************************************</p>
         <label for="">Introduce un nombre</label><br>
         <input type="text" name="nombre" id="" value="">
@@ -29,7 +29,7 @@ abc;
         <p>************************************</p>
     </form>
 abc;
-    
+    } 
 ?>
    
 </body>
