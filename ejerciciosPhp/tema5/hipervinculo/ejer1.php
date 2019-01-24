@@ -30,20 +30,20 @@ result;
     mysqli_close($conexion);
 
     if($inicio == 0){
-        echo "Anterior   ";
+        echo "Anterior       ";
         $x = $inicio + 2;
         echo '<a href="ejer1.php?inicio='.$x.'">Siguiente</a>';
        
     }else{
         $y = $inicio - 2;
-        echo '<a href="ejer1.php?inicio='.$y.'" >Anterior</a>'; 
+        echo '<a href="ejer1.php?inicio='.$y.'" >Anterior     </a>'; 
         
-        if($inicio < $filas-2){
+        if($inicio < $filas-2){//o $inicio == 2
             
             $x = $inicio + 2;  
-            echo '<a href="ejer1.php?inicio='.$x.'">Siguiente</a>';
+            echo '<a href="ejer1.php?inicio='.$x.'">    Siguiente</a>';
         }else{
-            echo "Siguiente";
+            echo "    Siguiente";
         }
      
     }
