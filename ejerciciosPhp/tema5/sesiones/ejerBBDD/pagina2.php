@@ -11,17 +11,17 @@
 abc;
     
     $query = mysqli_query($conexion,$q)or die("Error en la query");
-   //$filas = mysqli_num_rows($query);
+   $filas = mysqli_num_rows($query);
     //echo ($filas);
     
-    //if( $filas > 0){
+    if( $filas > 0){
         if($resultado = mysqli_fetch_array($query)){
 
             $_SESSION['nombre'] = $resultado['nombre'];
         }
         //$resultado = mysqli_fetch_array($query);
         //echo ($_SESSION['nombre']);
-   // }
+    }
     echo <<<abc
     <a href="pagina3.php">Siguiente</a>
 abc;
