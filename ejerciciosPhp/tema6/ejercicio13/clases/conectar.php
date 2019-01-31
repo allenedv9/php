@@ -9,9 +9,10 @@
             return $conexion;
         }
 
-        // public static function cerrarConexion(){
+        public static function cerrarConexion($conexion){
             
-        // }
+            mysqli_close($conexion);
+        }
     }
 
 ?>

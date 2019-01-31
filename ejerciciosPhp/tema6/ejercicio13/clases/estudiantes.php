@@ -20,9 +20,11 @@
             while($reg = mysqli_fetch_assoc($query)){
                 $this->est[] = $reg;
             }
+
+            Conectar::cerrarConexion($con);
             return $this->est;
 
-            mysqli_close($con);
+            // mysqli_close($con);
         }
         
        
