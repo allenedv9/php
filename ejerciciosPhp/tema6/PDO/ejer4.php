@@ -1,13 +1,13 @@
 <?php
-$telefono = '147852369';
+$tel = '147852369';
 try{
 
   $con = new PDO('mysql:host=localhost;dbname=estudiantes', 'root', '');
   
  
- $stmt = $con->prepare('SELECT nombre FROM estudiante WHERE telefono like :telefono');
+ $stmt = $con->prepare('SELECT nombre FROM estudiante WHERE telefono like :tel');
 
-  $stmt->execute(array(':telefono' => $telefono ));
+  $stmt->execute(array(':tel' => $tel ));
  
   //print_r($stmt);
  
