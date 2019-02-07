@@ -8,14 +8,15 @@
 </head>
 <body>
     
-    <form action="dos.php" method="post">
+    <form action="vista_2.php" method="post">
         <input type="radio" name="radio" id="" value="alta" required>
         <label for="">Alta estudiante</label><br>
         <input type="radio" name="radio" id="" value="borrarModificar" required>
         <label for="">Borrar o modificar estudiantes</label><br>
         <input type="radio" name="radio" id="" value="consulta" required>
         <label for="">Consulta de estudiantes</label><br><br>
-        <input type="submit" value="Seleccionar">
+        <input type="submit" value="seleccionar">
     </form>
 </body>
 </html>
+
