@@ -5,7 +5,7 @@
 
         try {
             
-            $con = new PDO("mysql:host = ".$host."; dbname = ".$db, $user, $pass);
+            $con = new PDO("mysql:host=".$host."; dbname=".$db, $user, $pass);
     
             return $con;
 
@@ -26,7 +26,7 @@
          
             $rows = $stmt->execute(array(':nombre'=>$nombre, ':apellido'=>$apellido, ':telefono'=>$telefono));
     
-            echo $rows."hola";
+            //echo $rows."hola";
             if( $rows == 1 ){
                 echo 'Inserción correcta';
             }else{

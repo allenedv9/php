@@ -8,8 +8,9 @@
 
 
     $insert = <<<abc
-        INSERT into estudiante  VALUES (:nombre, :apellido, :telefono)
+        INSERT INTO estudiante (nombre, apellido, telefono)  VALUES (:nombre, :apellido, :telefono)
 abc;
+
     
     insertarRegistro($con, $insert, $nombre, $apellido, $telefono);
 
