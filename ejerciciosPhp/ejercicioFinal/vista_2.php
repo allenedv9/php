@@ -21,7 +21,7 @@ abc;
             <form action="index.php" method="post">
                 <label>Inserta un ID: </label>
                 <input type="text" name="nombre"><br><br>
-                <input type="submit" name="buscaId" value="buscar">
+                <input type="submit" name="buscaId" value="modificar">
             </form>
 abc;
     }

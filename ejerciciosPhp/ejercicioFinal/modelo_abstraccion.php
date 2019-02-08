@@ -36,11 +36,34 @@
                
         }   
 
-    function seleccionarRegistro($con, $id){
+        // seleccionar un registro
+    function seleccionarRegistro($con,$q){
 
-        
+        $resultado = $con->prepare($q);
+        $resultado->execute();
+        return $resultado;
     }
 
+    function registros($resultado){
+
+        return $resultado->fetch();
+
+    }
    
+    // borrar registro
+
+    function borrarRegistro($con, $q, $id){
+
+        $resultado = $con->prepare($q);
+       // $resultado = bindParam(":id", $id, PDO::PARAM_INT);
+        $rows = $resultado->execute(array(':id' => $id));
     
+        //echo $rows."hola";
+        if( $rows == 1 ){
+            echo 'Registro borrado';
+        }else{
+            echo "fallo";
+        }
+
+    }
 ?>

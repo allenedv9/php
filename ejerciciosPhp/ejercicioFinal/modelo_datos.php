@@ -1,6 +1,6 @@
 <?php
 
-   // require_once 'modelo_abstraccion.php';
+   // insertar estudiante
     function insertEst($nombre,$apellido,$telefono){
         //echo $nombre;
 
@@ -17,6 +17,7 @@ abc;
 
     }
 
+    // seleccionar estudiante por id
     function selectEst($id){
         
         $con = crearConexion("localhost","estudiantes","root","");
@@ -25,17 +26,58 @@ abc;
             $q = <<<abc
             SELECT * FROM estudiante
 abc;
-        $estudiante = seleccionarRegistro($con,$q);
+        $resultado = seleccionarRegistro($con,$q);
+        $estudiante = array();
+        while($fila = registros($resultado)){
+            $estudiante[] = $fila;
+        }
 
+        return $estudiante;
         
         }else{
         $q = <<<abc
             SELECT * FROM estudiante where id_estudiante = $id
 abc;
-        $estudiante = seleccionarRegistro($con,$q);
+        $resultado = seleccionarRegistro($con,$q,$id);
+        $estudiante = array();
+        while($fila = registros($resultado)){
+            $estudiante[] = $fila;
         }
 
-       
+        return $estudiante;
+      
     }
-    
+
+    }
+
+    //borrar estudiante
+
+    function borrarEst($id){
+
+        $con = crearConexion("localhost","estudiantes","root","");
+
+        $q = <<<abc
+            Delete from estudiante where id_estudiante = :id
+abc;
+
+        borrarRegistro($con, $q, $id);
+
+
+    }
+
+    //modificar un estudiante
+
+    function modificarEst($id){
+
+        $con = crearConexion("localhost","estudiantes","root","");
+
+        $q = <<<abc
+            UPDATE estudiante             
+abc;
+
+        borrarRegistro($con, $q, $id);
+
+
+    }
+
 ?>
